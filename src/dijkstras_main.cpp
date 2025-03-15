@@ -17,10 +17,10 @@ int main(int argc, char* argv[]) {
     vector<int> previous;
     vector<int> distances = dijkstra_shortest_path(G, 0, previous);
     
-    for(auto v : G.numVertices){
+    for (int v=0; v<G.numVertices; ++v){
         vector<int> path = extract_shortest_path(distances, previous, v);
-        if (path.empty()){ cout << "No path from 0 to " << v << endl; } 
-        else { print_path(path, distances[v]); }
+        if(path.empty()){ cout << "No path from 0 to " << v << endl; } 
+        else{ print_path(path, distances[v]); }
     }
     
     return 0;
